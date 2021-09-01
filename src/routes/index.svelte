@@ -20,9 +20,12 @@
     // Load API components
     import BlockEndpointBackendlessInitialize from "$lib/code-blocks/BlockEndpointBackendlessInitialize.svelte";
     import BlockEndpointBackendlessTableUpdate from "$lib/code-blocks/BlockEndpointBackendlessTableUpdate.svelte";
+    import BlockEndpointBackendlessTableCreate from "$lib/code-blocks/BlockEndpointBackendlessTableCreate.svelte";
+
     import BlockEndpointStripeCreateLineItems from "$lib/code-blocks/BlockEndpointStripeCreateLineItems.svelte";
     import BlockEndpointStripeCreateCheckoutSession from "$lib/code-blocks/BlockEndpointStripeCreateCheckoutSession.svelte";
     import BlockEndpointStripeCreateCustomer from "$lib/code-blocks/BlockEndpointStripeCreateCustomer.svelte";
+    import BlockEndpointStripeConfirmCheckoutPayment from "$lib/code-blocks/BlockEndpointStripeConfirmCheckoutPayment.svelte";
 
     // Switch statement can return components since they cant be referenced by strings
     function returnComponent(name) {
@@ -35,10 +38,12 @@
             // API components
             case "BlockEndpointBackendlessInitialize": return BlockEndpointBackendlessInitialize;
             case "BlockEndpointBackendlessTableUpdate": return BlockEndpointBackendlessTableUpdate;
+            case "BlockEndpointBackendlessTableCreate": return BlockEndpointBackendlessTableCreate;
 
             case "BlockEndpointStripeCreateLineItems": return BlockEndpointStripeCreateLineItems;
             case "BlockEndpointStripeCreateCheckoutSession": return BlockEndpointStripeCreateCheckoutSession;
             case "BlockEndpointStripeCreateCustomer": return BlockEndpointStripeCreateCustomer;
+            case "BlockEndpointStripeConfirmCheckoutPayment": return BlockEndpointStripeConfirmCheckoutPayment;
         }
     }
 
@@ -210,11 +215,14 @@
             <hr>
 
             <Button bind:array={templateEndpointItems} componentName="BlockEndpointBackendlessInitialize" text="Initialize Backendless" />
+            <Button bind:array={templateEndpointItems} componentName="BlockEndpointBackendlessTableCreate" text="Backendless Create Item" />
             <Button bind:array={templateEndpointItems} componentName="BlockEndpointBackendlessTableUpdate" text="Backendless Update Item" />
 
+            <Button bind:array={templateEndpointItems} componentName="BlockEndpointStripeCreateCustomer" text="New Stripe Customer" />
             <Button bind:array={templateEndpointItems} componentName="BlockEndpointStripeCreateLineItems" text="Stripe Line Items" />
             <Button bind:array={templateEndpointItems} componentName="BlockEndpointStripeCreateCheckoutSession" text="Stripe Checkout" />
-            <Button bind:array={templateEndpointItems} componentName="BlockEndpointStripeCreateCustomer" text="New Stripe Customer" />
+            <Button bind:array={templateEndpointItems} componentName="BlockEndpointStripeConfirmCheckoutPayment" text="Stripe Confirm Payment" />
+
         </nav><!-- end col -->
 
         <main class="col">
