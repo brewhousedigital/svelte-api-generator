@@ -1,4 +1,9 @@
 <script>
+    // Notes
+    // Use this to encode the code blocks
+    // https://www.toptal.com/designers/htmlarrows/punctuation/left-brace/
+
+
     // Load components
     import Checkbox from "$lib/components/Checkbox.svelte";
     import Button from "$lib/components/Button.svelte";
@@ -274,7 +279,7 @@ const headers = &lbrace;
 // Make sure we have all required fields. Otherwise, get outta here.
 if (
     !data.firstname ||
-    !data.lastname ||
+    !data.lastname
 ) &lbrace;
     let message;
 
