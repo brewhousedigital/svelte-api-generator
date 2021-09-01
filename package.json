@@ -1,0 +1,25 @@
+{
+  "name": "svelte-api-generator",
+  "version": "1.0.0",
+  "description": "We guide the transformation of your ideas into a sustainable business solution.",
+  "license": "MIT",
+  "scripts": {
+    "start": "svelte-kit dev --port 65",
+    "dev": "svelte-kit dev --port 65",
+    "build": "svelte-kit build",
+    "preview": "svelte-kit preview"
+  },
+  "devDependencies": {
+    "@sveltejs/adapter-netlify": "^1.0.0-next.29",
+    "@sveltejs/kit": "next",
+    "svelte": "^3.42.3"
+  },
+  "type": "module",
+  "dependencies": {
+    "@lukeed/uuid": "^2.0.0",
+    "bufferutil": "^4.0.3",
+    "cookie": "^0.4.1",
+    "supports-color": "^9.0.2",
+    "utf-8-validate": "^5.0.5"
+  }
+}
