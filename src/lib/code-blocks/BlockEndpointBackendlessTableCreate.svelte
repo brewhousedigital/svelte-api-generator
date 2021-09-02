@@ -9,6 +9,7 @@ Backendless Table Update
 
 {:else}
 
+// Create a new record in the database
 let createNewDatabaseEntry;
 try &lbrace;
     let table = "/data/YOUR-TABLE-HERE";
