@@ -44,7 +44,7 @@ if(searchForCheckoutSession.payment_status !== "paid") &lbrace;
         statusCode, headers,
         body: JSON.stringify(&lbrace;
             status: "failed",
-            message: "This business builder invoice has not been paid for"
+            message: "This invoice has not been paid for yet. Please contact support for help."
         })
     };
 }

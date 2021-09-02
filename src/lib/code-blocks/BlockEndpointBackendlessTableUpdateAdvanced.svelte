@@ -9,12 +9,18 @@ Backendless Table Update
 
 {:else}
 
-// Update a record/records for a specific table
+// Update a record/records for a specific table using a WHERE clause
 let updateItem;
 try &lbrace;
-    // Backendless PUT requests require an objectId to be passed in the URL
-    let table = `/data/YOUR-TABLE-HERE/$&lbrace;data.objectId}`;
-    let api = endpoint + table;
+    // Backendless Advanced PUT requests do not require an objectId
+    let table = `/data/bulk/YOUR-TABLE-HERE`;
+
+    let where = "?where=" + encodeURIComponent(`column_name1='$&lbrace;data.value}'`);
+    let whereMultiple = "?where=" + encodeURIComponent(
+        `column_name1='$&lbrace;data.value}' and column_name2='$&lbrace;data.value2}'`
+    );
+
+    let api = endpoint + table + where;
 
     updateItem = await fetch(api, &lbrace;
         method: 'PUT',
@@ -29,7 +35,7 @@ try &lbrace;
 }
 catch (error) &lbrace;
     console.log("---- unable to update object in backendless ----")
-    console.log("endpoint", `/data/YOUR-TABLE-HERE/$&lbrace;data.objectId}`)
+    console.log("endpoint", `/data/YOUR-TABLE-HERE`)
     console.log(error)
     console.log("---- end error ----")
 

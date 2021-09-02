@@ -18,9 +18,13 @@
     import BlockImportStripe from "$lib/code-blocks/BlockImportStripe.svelte";
 
     // Load API components
+    import BlockEndpointDataCheck from "$lib/code-blocks/BlockEndpointDataCheck.svelte";
+
     import BlockEndpointBackendlessInitialize from "$lib/code-blocks/BlockEndpointBackendlessInitialize.svelte";
-    import BlockEndpointBackendlessTableUpdate from "$lib/code-blocks/BlockEndpointBackendlessTableUpdate.svelte";
     import BlockEndpointBackendlessTableCreate from "$lib/code-blocks/BlockEndpointBackendlessTableCreate.svelte";
+    import BlockEndpointBackendlessTableRetrieve from "$lib/code-blocks/BlockEndpointBackendlessTableRetrieve.svelte";
+    import BlockEndpointBackendlessTableUpdate from "$lib/code-blocks/BlockEndpointBackendlessTableUpdate.svelte";
+    import BlockEndpointBackendlessTableUpdateAdvanced from "$lib/code-blocks/BlockEndpointBackendlessTableUpdateAdvanced.svelte";
 
     import BlockEndpointStripeCreateLineItems from "$lib/code-blocks/BlockEndpointStripeCreateLineItems.svelte";
     import BlockEndpointStripeCreateCheckoutSession from "$lib/code-blocks/BlockEndpointStripeCreateCheckoutSession.svelte";
@@ -36,9 +40,13 @@
             case "BlockImportStripe": return BlockImportStripe;
 
             // API components
+            case "BlockEndpointDataCheck": return BlockEndpointDataCheck;
+
             case "BlockEndpointBackendlessInitialize": return BlockEndpointBackendlessInitialize;
-            case "BlockEndpointBackendlessTableUpdate": return BlockEndpointBackendlessTableUpdate;
             case "BlockEndpointBackendlessTableCreate": return BlockEndpointBackendlessTableCreate;
+            case "BlockEndpointBackendlessTableRetrieve": return BlockEndpointBackendlessTableRetrieve;
+            case "BlockEndpointBackendlessTableUpdate": return BlockEndpointBackendlessTableUpdate;
+            case "BlockEndpointBackendlessTableUpdateAdvanced": return BlockEndpointBackendlessTableUpdateAdvanced;
 
             case "BlockEndpointStripeCreateLineItems": return BlockEndpointStripeCreateLineItems;
             case "BlockEndpointStripeCreateCheckoutSession": return BlockEndpointStripeCreateCheckoutSession;
@@ -214,9 +222,13 @@
 
             <hr>
 
+            <Button bind:array={templateEndpointItems} componentName="BlockEndpointDataCheck" text="Data Check" />
+
             <Button bind:array={templateEndpointItems} componentName="BlockEndpointBackendlessInitialize" text="Initialize Backendless" />
             <Button bind:array={templateEndpointItems} componentName="BlockEndpointBackendlessTableCreate" text="Backendless Create Item" />
+            <Button bind:array={templateEndpointItems} componentName="BlockEndpointBackendlessTableRetrieve" text="Backendless Retrieve Item(s)" />
             <Button bind:array={templateEndpointItems} componentName="BlockEndpointBackendlessTableUpdate" text="Backendless Update Item" />
+            <Button bind:array={templateEndpointItems} componentName="BlockEndpointBackendlessTableUpdateAdvanced" text="Backendless Advanced Update" />
 
             <Button bind:array={templateEndpointItems} componentName="BlockEndpointStripeCreateCustomer" text="New Stripe Customer" />
             <Button bind:array={templateEndpointItems} componentName="BlockEndpointStripeCreateLineItems" text="Stripe Line Items" />
