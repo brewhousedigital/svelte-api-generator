@@ -13,7 +13,11 @@ Create Stripe Checkout Session
 // https://stripe.com/docs/api/checkout/sessions/retrieve?lang=node
 let searchForCheckoutSession;
 try &lbrace;searchForCheckoutSession = await stripe.checkout.sessions.retrieve(data.checkoutID)}
-catch (error) &lbrace;console.log(error)}
+catch (error) &lbrace;
+    console.log("---- Unable to retrieve Stripe checkout session ----")
+    console.log(error)
+    console.log("---- end error ----")
+}
 
 // See if the Stripe checkout was valid
 if(searchForCheckoutSession === undefined) &lbrace;
